@@ -65,7 +65,7 @@ img {
 /* =============== COMPONENTS ============ */
 
 .conteiner {
-  max-width: 1158px;
+  width: 1158px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -125,7 +125,9 @@ img {
 
 .menu-link:hover,
 .menu-link:focus,
-.menu-link.current {
+.menu-link.current,
+.contacts-link:hover,
+.contacts-link:focus {
   color: var(--pressed-state);
 }
 
@@ -142,9 +144,9 @@ img {
   margin-right: 40px;
 }
 
-.contacts-link:hover,
-.contacts-link:focus {
-  color: var(--pressed-state);
+.menu-link,
+.contacts-link {
+  padding: 24px 0;
 }
 
 .contacts-list {
@@ -166,6 +168,13 @@ img {
 .hero {
   padding: 188px 0;
   background-color: var(--hero-bg);
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-bg.jpg);
+  background-size: cover;
 }
 
 .hero-heading {
@@ -216,6 +225,21 @@ img {
   margin-right: 24px;
 }
 
+.feature-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.features-icon-conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 100px;
+  margin-bottom: 8px;
+  background-color: #f4f4fd;
+  border-radius: 4px;
+}
+
 /* =================== ABOUT ====================== */
 
 .about {
@@ -251,10 +275,84 @@ img {
 }
 
 .our-team-card-content {
+  max-width: 264px;
   text-align: center;
-  padding: 16px 32px;
+  padding: 32px 16px;
   background: #ffffff;
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.our-team-soc-list {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.our-team-soc-item {
+  display: flex;
+}
+
+.our-team-soc-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #4d5ae5;
+}
+.our-team-soc-logo {
+  width: 16px;
+  height: 16px;
+  fill: #f4f4fd;
+}
+
+.our-team-soc-link:hover,
+.our-team-soc-link:focus {
+  background-color: #404bbf;
+}
+
+/* =================== CUSTOMERS =================== */
+
+.customers {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.customers-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.customer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 88px;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+}
+
+.customer-icon {
+  width: 104px;
+  height: 56px;
+  fill: #8e8f99;
+}
+
+.customer-link:hover,
+.customer-link:focus {
+  border: 1px solid #404bbf;
+  border-radius: 4px;
+}
+
+.customer-link:hover .customer-icon,
+.customer-link:focus .customer-icon {
+  fill: #404bbf;
 }
 
 /* =================== FOOTER =================== */
@@ -263,6 +361,17 @@ img {
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: var(--dark-mode-bg);
+}
+
+.footer-conteiner {
+  display: flex;
+  max-width: 1158px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-logo-conteiner {
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -281,6 +390,38 @@ img {
   max-width: 264px;
   color: var(--accent-color);
 }
+
+.soc-media {
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.footer-soc-list {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-soc-link {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-soc-logo {
+  width: 16px;
+  height: 16px;
+  fill: #f4f4fd;
+}
+
+.footer-soc-link:hover,
+.footer-soc-link:focus {
+  background-color: #31d0aa;
+}
+
 /* =================== PORTFOLIO =================== */
 
 .portfolio {
@@ -300,6 +441,9 @@ img {
 .filter_btn:focus {
   color: var(--button-text-color-inverse);
   background-color: var(--pressed-state);
+  border-color: var(--pressed-state);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filters-list {
@@ -315,12 +459,21 @@ img {
   gap: 48px 24px;
 }
 
-/* .portfolio-card {
+.portfolio-card-link {
   width: 360px;
-} */
+  height: 420px;
+  display: block;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
 
 .portfolio-card-content {
   padding: 32px 0 32px 16px;
   border: 1px solid #e7e9fc;
   border-top: none;
+}
+
+.portfolio-card-link:hover,
+.portfolio-card-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
