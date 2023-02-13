@@ -399,7 +399,7 @@ img {
 
 .footer-soc-list {
   display: flex;
-  gap: 24px;
+  gap: 16px;
 }
 
 .footer-soc-link {
@@ -412,8 +412,8 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .footer-soc-logo {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   fill: #f4f4fd;
 }
 
